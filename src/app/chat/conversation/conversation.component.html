@@ -7,7 +7,8 @@
   </mat-form-field>
   <mat-list>
     <mat-list-item *ngFor="let chatMessage of chatMessages">
-      <div mat-line><strong> {{chatMessage.screenName}} </strong></div>
+      <div mat-list-avatar class="first-name-character" *ngIf="chatMessage.screenName">{{chatMessage.screenName.charAt(0).toUpperCase()}}</div>
+      <div mat-line><strong *ngIf="chatMessage.screenName"> {{chatMessage.screenName}} </strong></div>
       <div> {{chatMessage.timestamp | date}} </div>
       <div mat-line> {{chatMessage.message}} </div>
       <mat-divider></mat-divider>

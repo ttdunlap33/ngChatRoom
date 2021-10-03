@@ -21,7 +21,9 @@ export class ConversationComponent implements OnInit {
     this.chatRooms = this.chatService.getChatRooms();
     this.selectedChatRoom = this.chatRooms[0];
     this.chatService.getMessages(this.selectedChatRoom);
-    this.chatService.messages$.subscribe(chatMessages => this.chatMessages = chatMessages);
+    this.chatService.messages$.subscribe(chatMessages => {
+      this.chatMessages = chatMessages.filter(m => m.screenName !== undefined);
+    });
   }
 
 
