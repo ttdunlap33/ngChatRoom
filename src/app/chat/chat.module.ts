@@ -11,8 +11,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
-
-
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
     declarations: [
@@ -23,16 +22,17 @@ import {MatCardModule} from "@angular/material/card";
     exports: [
         ChatViewComponent
     ],
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatSelectModule,
-    MatCardModule
-  ]
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        MatSelectModule,
+        MatCardModule,
+        MatGridListModule
+    ]
 })
 export class ChatModule { }
