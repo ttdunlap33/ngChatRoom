@@ -1,0 +1,22 @@
+<div class="chat-view-container">
+  <mat-card>
+    <div *ngIf="errorMessage" class="error-message">
+      {{errorMessage}}
+      <mat-icon class="close-icon" (click)="hideError()">close</mat-icon>
+    </div>
+    <div>
+      <div class="display-inline-block" style="width: 90%">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label> Chat message</mat-label>
+          <span matPrefix> <mat-icon>person</mat-icon> </span>
+          <input type="text" matInput [(ngModel)]="message" required/>
+        </mat-form-field>
+      </div>
+      <div class="display-inline-block" style="">
+        <button mat-raised-button color="primary" (click)="sendMessage()" style="padding: 5px 45px;margin: 0 0 20px 20px"> Send</button>
+      </div>
+    </div>
+    <app-conversation (onChatRoomChangeEvent)="onChatRoomChangeEvent($event)"></app-conversation>
+
+  </mat-card>
+</div>
