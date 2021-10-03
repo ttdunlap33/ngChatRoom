@@ -1,5 +1,6 @@
 <mat-card class="chat-view-container">
   <div *ngIf="errorMessage" class="error-message">
+    <mat-icon inline>error</mat-icon>
     {{errorMessage}}
     <mat-icon class="close-icon" (click)="hideError()">close</mat-icon>
   </div>
@@ -7,7 +8,9 @@
     <mat-label> Chat message</mat-label>
     <span matPrefix> <mat-icon>person</mat-icon> </span>
     <input type="text" matInput [(ngModel)]="message" required/>
-    <button matSuffix mat-raised-button color="primary" mat-icon-button (click)="sendMessage()"> <mat-icon>send</mat-icon> </button>
+    <button matSuffix mat-raised-button color="primary" mat-icon-button (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+    </button>
   </mat-form-field>
   <app-conversation (onChatRoomChangeEvent)="onChatRoomChangeEvent($event)"></app-conversation>
 </mat-card>
