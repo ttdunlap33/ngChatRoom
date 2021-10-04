@@ -21,7 +21,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     ],
   exports: [
     ChatViewComponent,
-    RegisterViewComponent
+    RegisterViewComponent,
+    ConversationComponent
   ],
     imports: [
         CommonModule,

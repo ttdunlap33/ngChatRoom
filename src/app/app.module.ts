@@ -7,6 +7,10 @@ import {AppComponent} from './app.component';
 import {ServicesModule} from './services/services.module';
 import {ChatModule} from "./chat/chat.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ServicesModule,
     ChatModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

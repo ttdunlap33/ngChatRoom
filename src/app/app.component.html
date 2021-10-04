@@ -1,2 +1,14 @@
-<app-register-view></app-register-view>
-<app-chat-view></app-chat-view>
+<div class="app-shell">
+  <mat-toolbar class="toolbar" color="primary">
+    <div class="toolbar-item">
+      {{ title }}
+    </div>
+    <div class="toolbar-actions">
+      <a routerLink="/registration"> Register</a>
+      <a routerLink="/chats"> Chats</a>
+    </div>
+  </mat-toolbar>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>

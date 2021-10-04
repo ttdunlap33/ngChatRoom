@@ -7,9 +7,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'chatRoom';
-  chatRoom = 'Fun with Taxes';
-
+  title = 'ngChat';
   constructor() {
   }
 
