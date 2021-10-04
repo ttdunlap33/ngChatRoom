@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ChatService} from "../../services/chat/chat-service.service";
 import {Chat} from "../models/chat.model";
+import {RegistrationService} from "../../services/registration/registration.service";
 
 @Component({
   selector: 'app-chat-view',
@@ -11,22 +12,32 @@ export class ChatViewComponent implements OnInit {
   message: string = "";
   selectedChatRoom: string = "";
   errorMessage: string = "";
+  screenName: string = "";
 
-  constructor(private chatService: ChatService) {
+  constructor(private chatService: ChatService, private registrationService: RegistrationService) {
   }
 
   ngOnInit(): void {
+    this.selectedChatRoom = this.chatService.getChatRooms()[0];
+    this.setScreenName();
   }
-
+  setScreenName(){
+    this.registrationService.registeredUser$.subscribe(registrations => {
+      const registration = registrations.find(r => r.chatRoom === this.selectedChatRoom);
+      if (registration)
+        this.screenName = registration.screenName;
+      else
+        this.screenName = "";
+    })
+  }
   sendMessage() {
     if (this.message) {
-      // TODO: Get registered screen name from registration service
-      if (localStorage.getItem("SCREEN_NAME")) {
+      if (this.screenName) {
         this.errorMessage = "";
         const chat: Chat = {
           message: this.message,
           chatRoom: this.selectedChatRoom,
-          screenName: "Default",
+          screenName: this.screenName,
           timestamp: new Date()
         };
         this.chatService.sendMessage(chat);
@@ -38,6 +49,7 @@ export class ChatViewComponent implements OnInit {
 
   onChatRoomChangeEvent(chatRoom: string) {
     this.selectedChatRoom = chatRoom;
+    this.setScreenName();
   }
 
   hideError() {

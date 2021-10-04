@@ -5,7 +5,7 @@ import { ChatViewComponent } from './chat-view/chat-view.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
@@ -19,9 +19,10 @@ import {MatGridListModule} from "@angular/material/grid-list";
         ChatViewComponent,
         ConversationComponent
     ],
-    exports: [
-        ChatViewComponent
-    ],
+  exports: [
+    ChatViewComponent,
+    RegisterViewComponent
+  ],
     imports: [
         CommonModule,
         MatFormFieldModule,
@@ -32,7 +33,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
         MatListModule,
         MatSelectModule,
         MatCardModule,
-        MatGridListModule
+        MatGridListModule,
+        ReactiveFormsModule
     ]
 })
 export class ChatModule { }

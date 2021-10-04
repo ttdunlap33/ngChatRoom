@@ -1,1 +1,14 @@
-<p>register-view works!</p>
+<form class="example-form" [formGroup]="registrationFormGroup">
+  <mat-form-field class="example-full-width" appearance="fill">
+     <mat-icon matPrefix>person</mat-icon>
+    <input matInput type="text" placeholder="Screen Name" formControlName="screenName" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-select style="font-size: 15px; font-style: italic; line-height: 1.5;" formControlName="chatRoom" required disableRipple placeholder="chat rooms">
+      <mat-option style="font-size: 15px; font-style: italic; line-height: 2;" *ngFor="let room of chatRooms" [value]="room">{{room}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="accent" [disabled]="!registrationFormGroup.valid" (click)="register()">Submit</button>
+</form>

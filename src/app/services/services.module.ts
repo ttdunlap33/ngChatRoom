@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {ChatService} from "./chat/chat-service.service";
-
+import {RegistrationService} from "./registration/registration.service";
 
 
 @NgModule({
@@ -12,7 +12,8 @@ import {ChatService} from "./chat/chat-service.service";
     HttpClientModule
   ],
   providers: [
-    ChatService
+    ChatService,
+    RegistrationService
   ]
 })
 export class ServicesModule { }
