@@ -9,6 +9,7 @@ import {RegistrationService} from "../../services/registration/registration.serv
   styleUrls: ['./register-view.component.scss']
 })
 export class RegisterViewComponent implements OnInit {
+  message: string =''
   chatRooms: string[] = []
   registrationFormGroup = this.fb.group({
     screenName: ['', Validators.required],
@@ -24,5 +25,9 @@ export class RegisterViewComponent implements OnInit {
 
   register() {
     this.registerService.register(this.registrationFormGroup.value);
+    this.message = 'Succesfully Registered';
+  }
+  closeMessage(){
+    this.message = '';
   }
 }

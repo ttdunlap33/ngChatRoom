@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: "chats",
     component: ChatViewComponent
-  }
+  },
+  {path:'', component: RegisterViewComponent},
 ];
 
 @NgModule({

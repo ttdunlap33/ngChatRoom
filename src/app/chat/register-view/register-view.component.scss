@@ -1,0 +1,25 @@
+.register-form {
+    width:400px;
+    margin: 100px auto;
+ 
+}
+
+.header {
+    text-align: center;
+}
+
+
+
+.message {
+    background-color: rgb(138, 230, 138);
+    color: white;
+    padding: 10px;
+    margin:  10px 0;
+    border-radius: 5px;
+    width: 380px;
+    .close-icon {
+      float: right;
+      cursor: pointer;
+    }
+  }
+

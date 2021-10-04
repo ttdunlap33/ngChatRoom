@@ -8,7 +8,7 @@
     <mat-label> Chat message</mat-label>
     <span matPrefix> <mat-icon>person</mat-icon> </span>
     <input type="text" matInput [(ngModel)]="message" required/>
-    <button matSuffix mat-raised-button color="primary" mat-icon-button (click)="sendMessage()">
+    <button class="button-primary" matSuffix mat-raised-button mat-icon-button (click)="sendMessage()">
       <mat-icon>send</mat-icon>
     </button>
   </mat-form-field>

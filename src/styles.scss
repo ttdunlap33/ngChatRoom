@@ -2,6 +2,7 @@
 
 html, body {
   height: 100%;
+  background-color: whitesmoke;
 }
 
 body {
@@ -17,4 +18,9 @@ body {
 }
 .display-inline-block{
   display: inline-block;
+}
+
+.button-primary {
+  background: #007bff;
+  color: #fff;
 }
